@@ -30,13 +30,15 @@ pipeline{
 		stage('Build'){
 			
 			steps{
-				
-				//cmd_exec(cd /sast-to-ast-export)
-				//cmd_exec(go build)
-				//sh 'go get -u golang.org/x/lint/golint'
-				sh "go version"
-				sh "go get github.com/checkmarxDev/ast-sast-export"
-				sh "go build github.com/checkmarxDev/ast-sast-export"
+				script{
+					//cmd_exec(cd /sast-to-ast-export)
+					//cmd_exec(go build)
+					//sh 'go get -u golang.org/x/lint/golint'
+					sh "go version"
+					sh "cd sast-to-ast-export"
+					//sh "go get github.com/checkmarxDev/ast-sast-export"
+					sh "go build"
+				}
 			}
 		}
 		stage('IntegrationService'){
