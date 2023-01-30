@@ -11,7 +11,7 @@ pipeline{
 		stage('CloneRepo'){
 			steps{
 				script{
-					sh "rm -r ${GOROOT}/sast-to-ast-export"
+					sh "rm -r $GOROOT/sast-to-ast-export"
 					sh "git clone https://github.com/Checkmarx/sast-to-ast-export.git:${GOROOT}"
 					sh "ls -lart ./sast-to-ast-export"
 					sh "pwd"
