@@ -27,6 +27,7 @@ pipeline{
 			steps{
 				//cmd_exec(cd /sast-to-ast-export)
 				//cmd_exec(go build)
+				sh 'go get ./...'
 				sh "go version"
 				//sh "go mod init sast-to-ast-export"
 				sh "go build sast-to-ast-export"
