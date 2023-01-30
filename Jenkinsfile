@@ -1,5 +1,12 @@
 pipeline{
 	agent any
+	environment {
+        GO114MODULE = 'on'
+        CGO_ENABLED = 0 
+        //GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+		goHome = tool 'myGoLang'
+		PATH = "$goHome/bin:$PATH"
+    }
 	stages{
 		stage('CloneRepo'){
 			steps{
@@ -9,9 +16,11 @@ pipeline{
 					sh "pwd"}
 			}
 		}
-		stage('RunUtility'){
+		stage('Build'){
+			
 			steps{
-				cmd_exec(/sast-to-ast-export/cxsast_exporter --user username --pass password --url http://localhost)
+				cmd_exec(cd /sast-to-ast-export)
+				cmd_exec(go build)
 			}
 		}
 		stage('IntegrationService'){
