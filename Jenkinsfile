@@ -3,7 +3,7 @@ pipeline{
 	environment {
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
-        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+        GOPATH = "${JENKINS_HOME}/workspace/${JOB_NAME}"
 		goHome = tool 'myGoLang'
 		PATH = "$goHome/bin:$PATH"
     }
@@ -24,7 +24,7 @@ pipeline{
 				//cmd_exec(cd /sast-to-ast-export)
 				//cmd_exec(go build)
 				sh "go version"
-				sh "go mod init"
+				sh "go build"
 			}
 		}
 		stage('IntegrationService'){
