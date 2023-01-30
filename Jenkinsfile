@@ -36,7 +36,7 @@ pipeline{
 				//cmd_exec(go build)
 				//sh 'go get -u golang.org/x/lint/golint'
 				sh "go version"
-				//sh "go mod init sast-to-ast-export"
+				sh "go get github.com/checkmarxDev/ast-sast-export"
 				sh "go build github.com/checkmarxDev/ast-sast-export"
 			}
 		}
