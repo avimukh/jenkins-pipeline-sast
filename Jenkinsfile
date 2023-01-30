@@ -21,12 +21,12 @@ pipeline{
 						//sh "printenv"
 						//sh "rm -r $goHome/src/"
 						//sh "cp -f -R ./sast-to-ast-export/ ."
-						//sh "ls -lart $goHome/src/sast-to-ast-export"
+						sh "ls -lart $goHome/src/sast-to-ast-export"
 						//sh "go version"
-						sh "ls -lart ./sast-to-ast-export"
+						//sh "ls -lart ./sast-to-ast-export"
 						//sh "rm go.mod"
-						sh "mkdir -p $goHome/src"
-						sh "ln -s $goHome/src ./sast-to-ast-export"
+						//sh "mkdir -p $goHome/src"
+						//sh "ln -s $goHome/src ./sast-to-ast-export"
 					}
 			}
 		}
@@ -44,7 +44,7 @@ pipeline{
 					//sh "go mod tidy"
 					//Ssh "go get github.com/checkmarxDev/ast-sast-export"
 					sh "go build"
-					sh "pwd"
+					sh "ls -lart ."
 					}
 			}
 		}

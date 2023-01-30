@@ -44,6 +44,7 @@ pipeline{
 					//sh "go mod tidy"
 					//Ssh "go get github.com/checkmarxDev/ast-sast-export"
 					sh "go build"
+					sh "pwd"
 					}
 			}
 		}
