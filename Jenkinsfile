@@ -16,7 +16,7 @@ pipeline{
 		}
 		stage('IntegrationService'){
 			steps{
-				echo "IntegrationService"
+				echo "IntegrationService "
 			}
 		}
 	}
