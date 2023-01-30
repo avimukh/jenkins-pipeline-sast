@@ -1,7 +1,7 @@
 pipeline{
 	agent any
 	tools {
-        go 'go1.14'
+        go 'myGoLang'
     }
 	environment {
         GO114MODULE = 'on'
