@@ -16,7 +16,7 @@ pipeline{
 					sh "git clone https://github.com/Checkmarx/sast-to-ast-export.git"
 					sh "ls -lart ./sast-to-ast-export"
 					sh "pwd"
-					sh "rm -r $goHome/src/"
+					//sh "rm -r $goHome/src/"
 					sh "sudo cp -f -R ./sast-to-ast-export $goHome/src/sast-to-ast-export"
 					sh "ls -lart $goHome/src/sast-to-ast-export"
 					sh "go version"}
