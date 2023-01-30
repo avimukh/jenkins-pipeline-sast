@@ -4,7 +4,7 @@ pipeline{
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
         GOPATH = "${JENKINS_HOME}/workspace/${JOB_NAME}/builds/${BUILD_ID}:${JENKINS_HOME}/workspace/${JOB_NAME}/workspace"
-		GOROOT = "${JENKINS_HOME}/workspace/${JOB_NAME}/workspace"
+		//GOROOT = "${JENKINS_HOME}/workspace/${JOB_NAME}/workspace"
 		goHome = tool 'myGoLang'
 		PATH = "$goHome/bin:$PATH"
     }
@@ -12,7 +12,7 @@ pipeline{
 		stage('CloneRepo'){
 			steps{
 				script{
-					//sh "rm -r ./sast-to-ast-export"
+					sh "rm -r ./sast-to-ast-export"
 					sh "git clone https://github.com/Checkmarx/sast-to-ast-export.git"
 					sh "ls -lart ./sast-to-ast-export"
 					sh "pwd"
