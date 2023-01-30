@@ -24,7 +24,7 @@ pipeline{
 						//sh "ls -lart $goHome/src/sast-to-ast-export"
 						//sh "go version"
 						sh "ls -lart ./sast-to-ast-export"
-						sh "rm go.mod"
+						//sh "rm go.mod"
 					}
 			}
 		}

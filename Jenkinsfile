@@ -6,7 +6,7 @@ pipeline{
 	environment {
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
-        GOPATH = "${WORKSPACE}"
+        GOPATH = "${JENKINS_HOME}/workspace/${JOB_NAME}/"
 		//GOROOT = "${JENKINS_HOME}/workspace/${JOB_NAME}/workspace"
 		goHome = tool 'myGoLang'
 		PATH = "$goHome/bin:$PATH"
@@ -25,6 +25,8 @@ pipeline{
 						//sh "go version"
 						sh "ls -lart ./sast-to-ast-export"
 						//sh "rm go.mod"
+						sh "mkdir -p $GOPATH/src/sast-to-ast-export"
+						sh "ln -s $WORKSPACE $GOPATH/src"
 					}
 			}
 		}
