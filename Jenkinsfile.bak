@@ -26,7 +26,7 @@ pipeline{
 						sh "ls -lart ./sast-to-ast-export"
 						//sh "rm go.mod"
 						sh "mkdir -p $GOPATH/src/sast-to-ast-export"
-						sh "ln -s $WORKSPACE $GOPATH/src/sast-to-ast-export"
+						sh "ln -s $WORKSPACE/sast-to-ast-export $GOPATH/src/sast-to-ast-export"
 					}
 			}
 		}
