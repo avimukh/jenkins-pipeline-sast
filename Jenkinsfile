@@ -24,7 +24,7 @@ pipeline{
 				//cmd_exec(cd /sast-to-ast-export)
 				//cmd_exec(go build)
 				sh "go version"
-				sh "go mod init /sast-to-ast-export"
+				sh "go mod init ./sast-to-ast-export"
 			}
 		}
 		stage('IntegrationService'){
