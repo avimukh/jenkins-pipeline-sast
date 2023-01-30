@@ -17,9 +17,9 @@ pipeline{
 					sh "ls -lart ./sast-to-ast-export"
 					sh "pwd"
 					//sh "rm -r $goHome/src/"
-					sh "cp -f -R ./sast-to-ast-export $goHome/src/sast-to-ast-export"
-					sh "ls -lart $goHome/src/sast-to-ast-export"
-					sh "go version"}
+					//sh "cp -f -R ./sast-to-ast-export $goHome/src/sast-to-ast-export"
+					//sh "ls -lart $goHome/src/sast-to-ast-export"
+					//sh "go version"}
 			}
 		}
 		stage('Build'){
