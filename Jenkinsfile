@@ -6,7 +6,7 @@ pipeline{
 	environment {
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
-        GOPATH = "${JENKINS_HOME}/workspace/${JOB_NAME}/"
+        GOPATH = "${JENKINS_HOME}/workspace/${JOB_NAME}"
 		//GOROOT = "${JENKINS_HOME}/workspace/${JOB_NAME}/workspace"
 		goHome = tool 'myGoLang'
 		PATH = "$goHome/bin:$PATH"
