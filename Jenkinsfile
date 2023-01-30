@@ -3,8 +3,8 @@ pipeline{
 	environment {
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
-        //GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
-		goHome = tool 'myGoLang'
+        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+		//goHome = tool 'myGoLang'
 		PATH = "$goHome/bin:$PATH"
     }
 	stages{
@@ -13,14 +13,15 @@ pipeline{
 				script{
 					sh "git clone https://github.com/Checkmarx/sast-to-ast-export.git"
 					sh "ls -lart ./sast-to-ast-export"
-					sh "pwd"}
+					sh "pwd"
+					sh "go version"}
 			}
 		}
 		stage('Build'){
 			
 			steps{
-				cmd_exec(cd /sast-to-ast-export)
-				cmd_exec(go build)
+				//cmd_exec(cd /sast-to-ast-export)
+				//cmd_exec(go build)
 			}
 		}
 		stage('IntegrationService'){
