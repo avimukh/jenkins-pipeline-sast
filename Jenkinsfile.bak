@@ -3,7 +3,7 @@ pipeline{
 	environment {
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
-        GOPATH = "${JENKINS_HOME}/workspace/${JOB_NAME}"
+        GOPATH = "${JENKINS_HOME}/workspace/${JOB_NAME}/sast-to-ast-export"
 		goHome = tool 'myGoLang'
 		PATH = "$goHome/bin:$PATH"
     }
