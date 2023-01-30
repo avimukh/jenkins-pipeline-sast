@@ -20,8 +20,8 @@ pipeline{
 		stage('Build'){
 			
 			steps{
-				cmd_exec(cd /sast-to-ast-export)
-				cmd_exec(go build)
+				//cmd_exec(cd /sast-to-ast-export)
+				//cmd_exec(go build)
 			}
 		}
 		stage('IntegrationService'){
