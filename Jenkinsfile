@@ -16,8 +16,8 @@ pipeline{
 			steps{
 				script{
 					sh "rm -r ./sast-to-ast-export"
-					sh "git clone https://github.com/Checkmarx/sast-to-ast-export.git:sast-to-ast-export"
-					sh "ls -lart ./sast-to-ast-export"
+					sh "git clone https://github.com/Checkmarx/sast-to-ast-export.git"
+					
 					sh "pwd"
 					//sh "printenv"
 					//sh "rm -r $goHome/src/"
@@ -30,6 +30,7 @@ pipeline{
 		stage('Build'){
 			
 			steps{
+				sh "ls -lart ./sast-to-ast-export"
 				//cmd_exec(cd /sast-to-ast-export)
 				//cmd_exec(go build)
 				//sh 'go get -u golang.org/x/lint/golint'
