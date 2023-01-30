@@ -4,9 +4,9 @@ pipeline{
 		stage('CloneRepo'){
 			steps{
 				script{
-				git clone https://github.com/Checkmarx/sast-to-ast-export.git
-				sh "ls -lart ./*"
-				sh "pwd"}
+					sh "git clone https://github.com/Checkmarx/sast-to-ast-export.git"
+					sh "ls -lart ./*"
+					sh "pwd"}
 			}
 		}
 		stage('Test'){
