@@ -30,7 +30,7 @@ pipeline{
 		stage('Build'){
 			
 			steps{
-					dir(sast-to-ast-export){
+					dir('sast-to-ast-export'){
 					//cmd_exec(cd /sast-to-ast-export)
 					//cmd_exec(go build)
 					//sh 'go get -u golang.org/x/lint/golint'

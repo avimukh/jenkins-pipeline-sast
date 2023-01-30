@@ -4,7 +4,7 @@ pipeline{
         go 'myGoLang'
     }
 	environment {
-        GO114MODULE = 'on'
+        //GO114MODULE = 'on'
         CGO_ENABLED = 0 
         GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}:${WORKSPACE}/sast-to-ast-export"
 		//GOROOT = "${JENKINS_HOME}/workspace/${JOB_NAME}/workspace"
