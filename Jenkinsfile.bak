@@ -39,11 +39,11 @@ pipeline{
 					//sh 'go get -u golang.org/x/lint/golint'
 					sh "go version"
 					sh "pwd"
-					sh "rm go.mod"
-					sh "go mod init github.com/checkmarxDev/ast-sast-export"
-					sh "go mod tidy"
+					//sh "rm go.mod"
+					//sh "go mod init github.com/checkmarxDev/ast-sast-export"
+					//sh "go mod tidy"
 					//Ssh "go get github.com/checkmarxDev/ast-sast-export"
-					sh "go build github.com/checkmarxDev/ast-sast-export"
+					sh "go build"
 					}
 			}
 		}
