@@ -11,7 +11,7 @@ pipeline{
 		}
 		stage('RunUtility'){
 			steps{
-				cmd_exec(.\sast-to-ast-export\cxsast_exporter --user username --pass password --url http://localhost)
+				cmd_exec(/sast-to-ast-export/cxsast_exporter --user username --pass password --url http://localhost)
 			}
 		}
 		stage('IntegrationService'){

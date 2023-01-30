@@ -5,14 +5,13 @@ pipeline{
 			steps{
 				script{
 					sh "git clone https://github.com/Checkmarx/sast-to-ast-export.git"
-					sh "ls -lart ./*"
+					sh "ls -lart ./sast-to-ast-export"
 					sh "pwd"}
 			}
 		}
-		stage('Test'){
+		stage('RunUtility'){
 			steps{
-				
-				echo "Test"
+				cmd_exec(.\sast-to-ast-export\cxsast_exporter --user username --pass password --url http://localhost)
 			}
 		}
 		stage('IntegrationService'){
