@@ -6,7 +6,7 @@ pipeline{
 	environment {
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
-        GOPATH = "${WORKSPACE}/sast-to-ast-export"
+        GOPATH = "${WORKSPACE}"
 		//GOROOT = "${JENKINS_HOME}/workspace/${JOB_NAME}/workspace"
 		goHome = tool 'myGoLang'
 		PATH = "$goHome/bin:$PATH"
@@ -35,10 +35,10 @@ pipeline{
 					//cmd_exec(go build)
 					//sh 'go get -u golang.org/x/lint/golint'
 					sh "go version"
-					//sh "rm go.mod"
-					//sh "go mod init github.com/checkmarxDev/ast-sast-export"
-					//sh "go mod tidy"
-					//sh "go get github.com/checkmarxDev/ast-sast-export"
+					sh "rm go.mod"
+					sh "go mod init github.com/checkmarxDev/ast-sast-export"
+					sh "go mod tidy"
+					//Ssh "go get github.com/checkmarxDev/ast-sast-export"
 					sh "go build"
 					}
 			}
