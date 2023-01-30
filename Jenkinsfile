@@ -18,6 +18,7 @@ pipeline{
 					sh "pwd"
 					sh "rm -r $goHome/src/"
 					sh "cp -R sast-to-ast-export $goHome/src/"
+					sh "ls -lart $goHome/src/sast-to-ast-export"
 					sh "go version"}
 			}
 		}
