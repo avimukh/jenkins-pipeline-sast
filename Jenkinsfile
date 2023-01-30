@@ -37,7 +37,7 @@ pipeline{
 				//sh 'go get -u golang.org/x/lint/golint'
 				sh "go version"
 				//sh "go mod init sast-to-ast-export"
-				sh "go build ./sast-to-ast-export"
+				sh "go build github.com/checkmarxDev/ast-sast-export"
 			}
 		}
 		stage('IntegrationService'){
